@@ -190,10 +190,3 @@ input, textarea{
 
 </style>
 
-
-
-// DISTRACT: could be nice to add an +add new funcitonality
-// DISTRACT: would be nice to fully list out these flashcards in a non-flashcard way - sort of like an index. place to quickly add new
-// DISTRACT: currently will be able to build in an +add New functionality pretty easily if I allow for both replace and edit
-// Other Improvement: Change the v-model of input question to the data,  
-    // click -> add new & blank flashcard generated & replace functions and stuff used... anyway back to it

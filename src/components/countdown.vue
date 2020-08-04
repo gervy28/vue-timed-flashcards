@@ -23,11 +23,7 @@
       </div>
       <button class="restart-button text-xs" type="button" @click="restartCountdown()">Restart</button> 
       <button class="restart-button text-xs" type="button" @click="changeTime()">Change Time</button>
-    </div>
-
-    
-    <!-- input in minutes, I need to have minutes and seconds and maybe even hours? no, start with minutes -->
-    
+    </div>    
   </div>
 </template>
 
@@ -160,7 +156,3 @@ export default {
 
 </style>
 
-
-// TODO: if pause need to stop the current setTimeout Completely! 
-// this will be sitting in a card that has similar style to the overall cards
-// DIST: could be awesome to throw a distraction killer note taking section in here

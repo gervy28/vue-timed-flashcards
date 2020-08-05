@@ -37,14 +37,14 @@
         <div v-if="showAnswer" class="flex flex-col w-full md:flex-row justify-center space-x-3 lg:w-9/12">
             <div class="md:w-1/2 flex flex-col text-left">
                 <h4>Correct Answer</h4>
-                <p class="p-2 md:h-40 bg-blue-100">
+                <p class="p-2 md:min-h-40 bg-blue-100">
                     {{ flashcards[currentCard].answer }} 
                 </p>
             </div>
             <div class="md:w-1/2 flex flex-col text-left">
                 <h4>Your Answer:</h4>
                 <textarea 
-                    class="border-2 h-40 p-2"
+                    class="border-2 h-full p-2"
                     v-model="enteredAnswer">
                 </textarea>
             </div>
@@ -79,20 +79,6 @@ export default {
             enteredAnswer: null,
             enteredQuestion: null,
             flashcards : flashcards.flashcards,
-            // flashcards: [
-            //     {   
-            //         'question': "What's the word?",
-            //         'answer': "This is the word"
-            //     },
-            //     {   
-            //         'question': "What is functional programing?",
-            //         'answer': "Functional programming is a strict type of programming that ensures data.."
-            //     },
-            //     {
-            //         'question': "How do you describe a JavaScript Prototype?",
-            //         'answer': "A JavaScript prototype is really just a method or something appended onto the object, that is not defined directly in the object"  
-            //     }
-            // ]
         }
     },
     computed:{

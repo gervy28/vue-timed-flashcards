@@ -1,0 +1,52 @@
+{
+    "flashcards":[
+        {   
+            "question": "What is a synchronous language?",
+            "answer": "A synchronous language executes one expression at a time, line by line, waiting for that function to complete. It does not move forward until the expression is fully executed. For example, if you lived a synchronous life and you were microwaving your next hot pocket: You would press start on the microwave, then you’d be frozen, staring at your hot pocket unable to do a thing until it was done! The thing is, you do have the capacity to do other stuff, you just can’t because of your rules. "
+        },
+        {   
+            "question": "What is an asynchronous language?",
+            "answer": "An asynchronous language allows multiple functions to be run if the capacity is available to run multiple functions. If a function is executing and not utilizing the computers capacity to its full potential, then the computer can go execute something else. For example, if you live an asynchronous life and you were microwaving your next hot pocket: You would press start on the microwave, then you’d do a flashcard or two while you wait for the microwave to be done – in turn, fully utilizing your capacity."
+        },
+        {
+            "question": "Is JavaScript synchronous or asynchronous?",
+            "answer": "JavaScript is a synchronous language! It executes one function at a time and fully waits for that function to complete. However, it allows the programmer to make it asynchronous when it is clearly beneficial. So, if you make an API call or need to wait a while (in computer terms) you can tell the browser to become asynchronous for this particular instance, it will automatically become asynchronous in other cases when you make AJAX requests."  
+        },
+        {
+            "question":"What is a JavaScript prototype?",
+            "answer":"A prototype is method or a property appended onto an object instance by reference. "
+        },
+        {
+            "question":"What is the JavaScript Map function?",
+            "answer":"The map function deals with two arrays -  the starting array and the return array. It takes the starting array and runs a function on every element within the array. Each starting array element is seen as the input to the function and each output is an element of the new array."
+        },
+        {
+            "question":"What is a closure?",
+            "answer":"A closure is one function being inside (enclosed) another function. The inner function’s lexical environment references the outer functions scope. Meaning the inner function maintains access to the outer function’s variables even after the outer function has finished executing. "
+        },
+        {
+            "question":"What does word.split(‘ ‘) do?",
+            "answer":"This will split a string into an array at each place it finds a space (‘ ‘). If we had ‘Hello,I’m,Nate’ = word and ran word.split(‘ ‘) the word would remain the same, but the return value would be [‘Hello,I’m,Nate’] now if they were spaces, the return value would be: [‘Hello’, ‘I’m’, ‘Nate’]"
+        },
+        {
+            "question":"What does the replace function do?",
+            "answer":"Replace finds is typically used with a regular expression. You pass a search value on a string and the function finds the value you describe, then the second argument provides what you’d like to replace the found value with."
+        },
+        {
+            "question":"What is the Set()?",
+            "answer":"Set() is an object of any type of values. You can create a new set by assigning a Set object to a new variable and passing the values in as arguments."
+        },
+        {
+            "question":"What is a function expression?",
+            "answer":"A function expression is basically any function that doesn’t match the syntax of how you first learned to declare a function. Function expressions typically are assigned to variables or are completely anonymous, or are IIFEs"
+        },
+        {
+            "question":"What is a function declaration?",
+            "answer":"Is one of the first things you learned in JavaScript and clearly defines a function without the function be attached or associated with anything else."
+        },
+        {
+            "question":"Will JavaScript in JSON execute?",
+            "answer":"alert('hello there, I'm your dubious code')"
+        }
+    ]
+}

@@ -3,7 +3,7 @@
         <button class="absolute add-card" @click="addNewCard()" type="button">Add Card</button>
         <div class="question-containers">
             <div v-if="!editQuestion" class="flex flex-row items-baseline justify-center">
-                <h3 class="question">{{ flashCards[currentCard].question }}</h3>
+                <h3 class="question">{{ flashcards[currentCard].question }}</h3>
                 <button class="custom-button text-sm"
                     type="button"
                     v-if="!editQuestion"
@@ -38,7 +38,7 @@
             <div class="md:w-1/2 flex flex-col text-left">
                 <h4>Correct Answer</h4>
                 <p class="p-2 md:h-40 bg-blue-100">
-                    {{ flashCards[currentCard].answer }} 
+                    {{ flashcards[currentCard].answer }} 
                 </p>
             </div>
             <div class="md:w-1/2 flex flex-col text-left">
@@ -67,6 +67,7 @@
 </template>
 
 <script>
+import flashcards from "../data/flashcardContent.json";
 
 export default {
     name: 'QuestionCard',
@@ -77,37 +78,38 @@ export default {
             showAnswer: false,
             enteredAnswer: null,
             enteredQuestion: null,
-            flashCards: [
-                {   
-                    'question': "What's the word?",
-                    'answer': "This is the word"
-                },
-                {   
-                    'question': "What is functional programing?",
-                    'answer': "Functional programming is a strict type of programming that ensures data.."
-                },
-                {
-                    'question': "How do you describe a JavaScript Prototype?",
-                    'answer': "A JavaScript prototype is really just a method or something appended onto the object, that is not defined directly in the object"  
-                }
-            ]
+            flashcards : flashcards.flashcards,
+            // flashcards: [
+            //     {   
+            //         'question': "What's the word?",
+            //         'answer': "This is the word"
+            //     },
+            //     {   
+            //         'question': "What is functional programing?",
+            //         'answer': "Functional programming is a strict type of programming that ensures data.."
+            //     },
+            //     {
+            //         'question': "How do you describe a JavaScript Prototype?",
+            //         'answer': "A JavaScript prototype is really just a method or something appended onto the object, that is not defined directly in the object"  
+            //     }
+            // ]
         }
     },
     computed:{
         totalCards(){
-            return this.flashCards.length;
+            return this.flashcards.length;
         }
     },
     methods: {
         setupEditQuestion(){
             this.editQuestion = true;
-            this.enteredQuestion = this.flashCards[this.currentCard].question; 
+            this.enteredQuestion = this.flashcards[this.currentCard].question; 
         },
         replaceAnswer(){
             if (this.enteredAnswer.length > 0){
                 let verify = confirm("Replacing this answer cannot be undone. Click cancel to cancel or okay to replace.")
                 if (verify === true){
-                    this.flashCards[this.currentCard].answer = this.enteredAnswer;
+                    this.flashcards[this.currentCard].answer = this.enteredAnswer;
                 } else {
                     alert("Overide Cancelled!")
                 }
@@ -119,7 +121,7 @@ export default {
             if (this.enteredQuestion.length > 0){
                 let verify = confirm("Replacing this question cannot be undone. Click cancel to cancel or okay to replace.")
                 if (verify === true){
-                    this.flashCards[this.currentCard].question = this.enteredQuestion;
+                    this.flashcards[this.currentCard].question = this.enteredQuestion;
                     this.editQuestion = false;
                     this.enteredQuestion = null;
                 } else {
@@ -144,14 +146,14 @@ export default {
             this.enteredQuestion = null;
         },
         addNewCard(){
-            this.flashCards.push(
+            this.flashcards.push(
                     { 
                         'question': "",
                         'answer': ""
                     }
                 );
             // here is one of my first major vue issues, I don't call any changes in the DOM, but I do call changes elsewhere
-            this.currentCard = this.flashCards.length - 1;
+            this.currentCard = this.flashcards.length - 1;
             this.editQuestion = true;
         }
     }
